@@ -1,6 +1,7 @@
 import React from "react";
 import TestUnmount from './testunmount.jsx';
 import CtopParent from "./childtoparent/ctopparent.jsx";
+import ContentRating from "./contentrating/contentratng.jsx";
 
 class ClassComp extends React.Component {
     
@@ -69,6 +70,8 @@ class ClassComp extends React.Component {
         console.log("render");
         return (
             <div>
+                <p>content rating</p>
+                <ContentRating />
                 <p>This is a class component</p>
                 <button onClick={this.incrementCOunter}>Click here {this.state.count}</button>
                 <br />
