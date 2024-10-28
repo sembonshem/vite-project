@@ -3,13 +3,24 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ClassComp from './classcomp.jsx'
+import FuncComp from './funccomps/funccomp.jsx'
+import HocNovel from './funccomps/higherodercomp/hocnovel.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const novel = {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    description: 'A novel about the American Dream and the pursuit of wealth and status.',
+    type: 'Fiction',
+  }
 
   return (
     <>
+    <HocNovel title={novel.title} author={novel.author} 
+    description={novel.description} type={novel.type} />
+    <FuncComp />
     <ClassComp />  
       <div>
         <a href="https://vite.dev" target="_blank">

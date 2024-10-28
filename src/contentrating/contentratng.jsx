@@ -7,12 +7,14 @@ class ContentRating extends React.Component {
       rating: 0,
       hoverRating: 0,
       dislike: 0,
+      totalRating: 0,
     };
   }
 
-  IncreaseDislike = () => this.setState((prevState) => ({
-    dislike: prevState.dislike + 1,
-  }));
+  IncreaseDislike = () => {
+    this.setState((prevState) => ({dislike: prevState.dislike + 1,}));
+    this.setState({totalRating: this.state.totalRating + 1});
+};
 
   render() {
     const { rating, hoverRating, dislike } = this.state;
@@ -36,12 +38,13 @@ class ContentRating extends React.Component {
           </div>
         </div>
         <div>
-        <button onClick={() => this.setState({rating: rating + 1})} >Like {rating}</button>
+        <button onClick={() => {this.setState({rating: rating + 1}); this.setState({totalRating: this.state.totalRating + 1});}} >Like {rating}</button>
           <button onClick={this.IncreaseDislike}>
             Dislike {dislike}
           </button>
           
         </div>
+        <p>total rating: {this.state.totalRating}</p>
       </div>
     );
 
