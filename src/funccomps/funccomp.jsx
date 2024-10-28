@@ -11,7 +11,15 @@ const FuncComp = () => {
 );
 };
 
-const FuncEmployeeData = (props) => {
+//new recommended way to define default prop values
+const FuncEmployeeData = ({
+  name = "Default Name",
+  employeeId = 123,
+  dept_id = 123,
+  increase
+}) => {
+
+// const FuncEmployeeData = (props) => {
     // useState hook manages state of showIncrease value
     //The useState hook creates state variables.
     //In this case, the showIncrease state variable holds a Boolean value indicating
@@ -24,21 +32,34 @@ const FuncEmployeeData = (props) => {
     const [showIncrease, setShowIncrease] = React.useState(false);
   return (
     <>
-    <div>Name:{props.name}, employeeId:{props.employeeId}, dept_id:{props.dept_id}</div>
+    <div>Name:{name}, employeeId:{employeeId}, dept_id:{dept_id}</div>
     <button onClick={() => setShowIncrease(!showIncrease)}>
         Click here to {showIncrease ? "hide" : "show"}
     </button>
-    {showIncrease && <div>Increase: {props.increase}</div>}
+    {showIncrease && <div>Increase: {increase}</div>}
     </>
 
 );
+
+// return (
+//   <>
+//   <div>Name:{props.name}, employeeId:{props.employeeId}, dept_id:{props.dept_id}</div>
+//   <button onClick={() => setShowIncrease(!showIncrease)}>
+//       Click here to {showIncrease ? "hide" : "show"}
+//   </button>
+//   {showIncrease && <div>Increase: {props.increase}</div>}
+//   </>
+
+// );
+
 };
 //set default props
 //MUST APPEAR IMMEDATEL before the esport statement
-FuncEmployeeData.defaultProps = {
-  name: "Default Name",
-  employeeId: 123,
-  dept_id: 123,
-};
+//Old method to be phased out in favor of declaring them in fucntional parameters
+// FuncEmployeeData.defaultProps = {
+//   name: "Default Name",
+//   employeeId: 123,
+//   dept_id: 123,
+// };
 
 export default FuncComp;

@@ -5,7 +5,7 @@ import './App.css'
 import ClassComp from './classcomp.jsx'
 import FuncComp from './funccomps/funccomp.jsx'
 import HocNovel from './funccomps/higherodercomp/hocnovel.jsx'
-
+import FuncUseState from './funccomps/funhooks.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +18,7 @@ function App() {
 
   return (
     <>
+    <FuncUseState />
     <HocNovel title={novel.title} author={novel.author} 
     description={novel.description} type={novel.type} />
     <FuncComp />
