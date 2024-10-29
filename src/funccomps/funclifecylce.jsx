@@ -12,6 +12,12 @@ const FuncLifeCycle = () => {
  //which with an empty dependency
  //array to ensure the effect runs only once after the initial render. 
   useEffect(() => {
+// add CORS origin alow block to web server or add cors module to django app whose link u put here
+//     <IfModule mod_headers.c>
+//     Header set Access-Control-Allow-Origin "*"
+//     Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+//     Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+// </IfModule>
     const requestOptions = {
       method: "POST",
       redirect: "follow",
@@ -49,7 +55,9 @@ const FuncLifeCycle = () => {
       <input type='color' value={color} onChange={(e) => setColor(e.target.value)} />
       <div style={{ color: color }}>count:{count}</div>
       <h3>External Data: {externaldata}</h3>
-      <button onClick={() => setColor('green')}>Force color to Green</button>
+      {/* colors should be color codes instead of standard words to
+       avoid being converted to RGB on render and failing test */}
+      <button onClick={() => setColor('#10d510')}>Force color to Green</button>
     </>
   )
 
