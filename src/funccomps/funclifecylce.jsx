@@ -12,18 +12,20 @@ const FuncLifeCycle = () => {
  //which with an empty dependency
  //array to ensure the effect runs only once after the initial render. 
   useEffect(() => {
-    fetch("https://bcs.nftconsult.com/api", {
-        method: "POST",
+    const requestOptions = {
+      method: "POST",
+      redirect: "follow",
         headers: {
 			'Content-Type': 'application/x-www-form-urlencoded',  // Set content type for form encoding  to be passed as form data
-            'Access-Control-Allow-Origin': '*', //to allow cross origin requests
         },
         body: {},
         cache: "no-cache"
-    })
-    .then((response) => response.json())
-    .then((data) => setExternalData(data.error_msg))
-    .catch((error) => {console.error('Error fetching data:', error)
+    };
+    
+    fetch("https://bcs.nftconsult.com/api", requestOptions)
+      .then((response) => response.text())
+      .then((result) => setExternalData(result))
+      .catch((error) => {console.error('Error fetching data:', error)
         setExternalData('Error fetching data');
     });
     console.log('step 2 itnitialising effects: Fetch data');
