@@ -7,6 +7,9 @@ import FuncComp from './funccomps/funccomp.jsx'
 import HocNovel from './funccomps/higherodercomp/hocnovel.jsx'
 import FuncUseState from './funccomps/funhooks.jsx'
 import FuncLifeCycle from './funccomps/funclifecylce.jsx'
+import ItemList from './funccomps/managinglists.jsx'
+//import element is not exported by default
+import {StylesCollection} from './reactstyles/stylescollec.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -19,6 +22,8 @@ function App() {
 
   return (
     <>
+    <StylesCollection />
+    <ItemList />
     <FuncLifeCycle />
     <FuncUseState />
     <HocNovel title={novel.title} author={novel.author} 

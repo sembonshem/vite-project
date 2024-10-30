@@ -8,6 +8,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom', // to simulate a DOM for testing
     setupFiles: './src/setupTests.ts', // optional setup file
-    include: ['src/**/*.test.tsx'], // specifies test file location and format
+    //include: ['src/**/*.test.tsx'], // specifies test file location and format
   }
 });

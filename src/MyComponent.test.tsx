@@ -1,3 +1,6 @@
+/*React Testing Library is a popular library for testing React components
+, focused on testing from a user’s perspective (interacting with components as users would). 
+It provides utilities like render, screen, and custom matchers via Jest DOM for easy assertions.*/
 import { render, screen } from '@testing-library/react';
 import FuncLifeCycle from './funccomps/funclifecylce.jsx'
 import { expect, describe, it } from 'vitest';
