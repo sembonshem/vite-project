@@ -1,6 +1,6 @@
 import React from 'react';
 import {ToggleMessageCSS} from './ToggleMessage.jsx';
-//you acn import multiple components from one file
+//you can import multiple components from one file
 import {ToggleMessageComps, InlineStyle} from './styledcomps.jsx';
 
 export function StylesCollection() {
