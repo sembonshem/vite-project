@@ -12,6 +12,7 @@ import ItemList from './funccomps/managinglists.jsx'
 import {StylesCollection} from './reactstyles/stylescollec.jsx'
 import TodoList from './TodoList/TodoList.jsx'
 import { ToggleButton } from './funccomps/customhooks.jsx'
+import ExampleForm from './exampleforms.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+    <ExampleForm />
     <ToggleButton />
     <TodoList />
     <StylesCollection />
