@@ -11,6 +11,7 @@ import ItemList from './funccomps/managinglists.jsx'
 //import element is not exported by default
 import {StylesCollection} from './reactstyles/stylescollec.jsx'
 import TodoList from './TodoList/TodoList.jsx'
+import { ToggleButton } from './funccomps/customhooks.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <>
+    <ToggleButton />
     <TodoList />
     <StylesCollection />
     <ItemList />
