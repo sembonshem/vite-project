@@ -19,17 +19,27 @@ export default function ExampleForm(){
         if (formData.name && formData.email && formData.message) {
             // You can add further logic here, like sending the form data to a server
             // For now, we'll just log the form data to the console
-            console.log(formData);
+            const confirmationMessage = `
+            Name: ${formData.name}
+            Email: ${formData.email}
+            Message: ${formData.message}
+            `;
+            const isConfirmed = window.confirm(`Please confirm your details:\n\n${confirmationMessage}`);
+            if (isConfirmed) {
+            console.log('Submitting feedback:', formData);
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
+            alert('Thank you for your valuable feedback!');
+            }
+            
         } else {
             // Show an error message or handle the validation error
             alert('Please fill in all fields.');
         }
-        // Clear the form after submission
-        setFormData({
-            name: '',
-            email: '',
-            message: '',
-        });
+        
     };
     return (
         <form onSubmit={handleSubmit}>
